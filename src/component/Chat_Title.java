@@ -26,6 +26,19 @@ public class Chat_Title extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        a1 = new component.a();
+
+        javax.swing.GroupLayout a1Layout = new javax.swing.GroupLayout(a1);
+        a1.setLayout(a1Layout);
+        a1Layout.setHorizontalGroup(
+            a1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        a1Layout.setVerticalGroup(
+            a1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -40,5 +53,6 @@ public class Chat_Title extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private component.a a1;
     // End of variables declaration//GEN-END:variables
 }
