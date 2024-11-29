@@ -14,7 +14,7 @@ public class Chat_Left_With_Profile extends javax.swing.JLayeredPane {
         txt.setBackground(new Color(229,229,229));
     }
 
-     public void setUserProfile(String user) {
+    public void setUserProfile(String user) {
         txt.setUserProfile(user);
     }
 
@@ -23,7 +23,18 @@ public class Chat_Left_With_Profile extends javax.swing.JLayeredPane {
     }
 
     public void setText(String text) {
-        txt.setText(text);
+        if (text.equals("")) {
+            txt.hideText();
+        } else {
+            txt.setText(text);
+        }
+
+    }
+    
+    public void setImage(Icon... image) {
+        txt.setImage(false, image);
+    }
+    public void setTime() {
         txt.setTime("10:30 PM");    //  Testing
     }
     @SuppressWarnings("unchecked")
