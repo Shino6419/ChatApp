@@ -4,22 +4,26 @@
  */
 package component;
 
+import java.awt.Color;
+
 /**
  *
  * @author Minh Khang
  */
-public class Chat_Left extends javax.swing.JLayeredPane {
+public class Chat_Right extends javax.swing.JLayeredPane {
 
     /**
-     * Creates new form Chat_Left
+     * Creates new form Chat_Right
      */
-    public Chat_Left() {
+    public Chat_Right() {
         initComponents();
+        txt.setBackground(new Color(181, 160, 255));
     }
+    
      public void setText(String text) {
         txt.setText(text);
+        
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,7 +50,7 @@ public class Chat_Left extends javax.swing.JLayeredPane {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

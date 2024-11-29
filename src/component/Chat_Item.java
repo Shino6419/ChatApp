@@ -15,9 +15,14 @@ import java.awt.RenderingHints;
  */
 public class Chat_Item extends javax.swing.JPanel {
 
+    /**
+     * Creates new form Chat_Item
+     */
     public Chat_Item() {
         initComponents();
         txt.setEditable(false);
+        txt.setBackground(new Color(0, 0, 0, 0));
+        txt.setOpaque(false);
     }
     public void setText(String text) {
         txt.setText(text);
@@ -35,20 +40,17 @@ public class Chat_Item extends javax.swing.JPanel {
         txt = new swing.JIMSendTextPane();
 
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
-
-        txt.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         add(txt);
     }// </editor-fold>//GEN-END:initComponents
 
     @Override
-    protected void paintComponent(Graphics grphcs) {
-        Graphics2D g2 = (Graphics2D) grphcs;
+    public void paintComponents(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setColor(getBackground());
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-        super.paintComponent(grphcs);
+        super.paintComponents(g); 
     }
-    
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
