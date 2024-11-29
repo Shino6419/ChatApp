@@ -15,14 +15,9 @@ public class Chat_Body extends javax.swing.JPanel {
     public Chat_Body() {
         initComponents();
         init();
-        addItemRight("hello");
-        addItemRight("Send a text message to a group of contacts. Include photos, personalize your texts, and track who clicked your links.");
-        addItemRight("hello\nHi");
-        addItemLeft("Simpletext started as a passion project because I couldn’t find what I was looking for. Most apps were trying to do too much and ended up bloated with features I don’t need. So I built Simpletext based on a simple premise — what if there’s an app that refuses to do more, choosing instead to do just one thing, and do it well? For Simpletext, that one thing is writing.");
-        addItemLeft("hello\nerererew\newewe");
-        addItemRight("hello\nerererew\newewe");
-        addItemLeft("hello\nerererew\newewe");
-        addItemRight("hello\nerererew\newewe");
+        addItemLeft("lmao", "Dave");
+        addDate("06/09/2004");
+        addItemRight("gay");
     }
     private void init() {
         body.setLayout(new MigLayout("fillx", "", "5[]5"));
@@ -31,10 +26,11 @@ public class Chat_Body extends javax.swing.JPanel {
     } 
     
     
-    public void addItemLeft(String text) {
-        Chat_Left item = new Chat_Left();
+    public void addItemLeft(String text, String user) {
+        Chat_Left_With_Profile item = new Chat_Left_With_Profile();
         item.setText(text);
-        body.add(item, "wrap, w ::80%");
+        item.setUserProfile(user);
+        body.add(item, "wrap, w 100::80%");
         //  ::80% set max with 80%
         body.repaint();
         body.revalidate();
@@ -43,11 +39,21 @@ public class Chat_Body extends javax.swing.JPanel {
     public void addItemRight(String text) {
         Chat_Right item = new Chat_Right();
         item.setText(text);
-        body.add(item, "wrap, al right, w ::80%");
+        body.add(item, "wrap, al right, w 100::80%");
         //  ::80% set max with 80%
         body.repaint();
         body.revalidate();
     }
+    
+    
+    public void addDate(String date) {
+        Chat_Date item = new Chat_Date();
+        item.setDate(date);
+        body.add(item, "wrap, al center");
+        body.repaint();
+        body.revalidate();
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

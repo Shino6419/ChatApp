@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package component;
 
 import java.awt.Color;
@@ -12,18 +9,19 @@ import java.awt.Color;
  */
 public class Chat_Right extends javax.swing.JLayeredPane {
 
-    /**
-     * Creates new form Chat_Right
-     */
     public Chat_Right() {
         initComponents();
         txt.setBackground(new Color(181, 160, 255));
+        
+        
     }
     
      public void setText(String text) {
         txt.setText(text);
-        
+        txt.setTime("10:30 PM"); 
+        txt.seen();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,7 +48,7 @@ public class Chat_Right extends javax.swing.JLayeredPane {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
