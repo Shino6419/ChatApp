@@ -4,17 +4,22 @@
  */
 package component;
 
+import java.awt.Color;
+
 /**
  *
  * @author Minh Khang
  */
-public class a extends javax.swing.JPanel {
+public class Chat_Left extends javax.swing.JLayeredPane {
 
     /**
-     * Creates new form a
+     * Creates new form Chat_Left
      */
-    public a() {
+    public Chat_Left() {
         initComponents();
+    }
+    public void setText(String text) {
+        txt.setText(text);
     }
 
     /**
@@ -26,19 +31,28 @@ public class a extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txt = new component.Chat_Item();
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private component.Chat_Item txt;
     // End of variables declaration//GEN-END:variables
 }

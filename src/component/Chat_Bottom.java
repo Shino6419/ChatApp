@@ -11,7 +11,7 @@ package component;
 public class Chat_Bottom extends javax.swing.JPanel {
 
     /**
-     * Creates new form Chat_Bottom
+     * Creates new form NewJPanel_3
      */
     public Chat_Bottom() {
         initComponents();
