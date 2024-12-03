@@ -14,17 +14,26 @@ import swing.PictureBox;
 
 public class Chat_Image extends javax.swing.JLayeredPane {
 
-     public Chat_Image(boolean right) {
+    public Chat_Image(boolean right) {
         initComponents();
         setLayout(new MigLayout("", "0[" + (right ? "right" : "left") + "]0", "3[]3"));
     }
 
-     public void addImage(Icon... images) {
+    public void addImage(Icon... images) {
         for (Icon image : images) {
             PictureBox pic = new PictureBox();
             pic.setPreferredSize(getAutoSize(image, 200, 200));
             pic.setImage(image);
             addEvent(pic, image);
+            add(pic, "wrap");
+        }
+    }
+    public void addImage(String... images) {
+        for (String image : images) {
+            Image_Item pic = new Image_Item();
+            pic.setPreferredSize(new Dimension(200, 200));  //  for test update next
+            pic.setImage(image);
+            //  addEvent(pic, image);
             add(pic, "wrap");
         }
     }

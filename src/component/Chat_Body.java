@@ -17,7 +17,9 @@ public class Chat_Body extends javax.swing.JPanel {
         
         addDate("06/09/2004");
         addItemRight("gay");
-        addItemLeft("", "Ro", new ImageIcon(getClass().getResource("/icon/test/test.png")));
+        addItemLeft("", "Dave", new ImageIcon(getClass().getResource("/icon/test/test.png")));
+        String img[] ={"LNN-A$ks1BD-F}iv9hp0EQxUw_N2"};
+        addItemLeft("", "Dave", img);
     }
     private void init() {
         body.setLayout(new MigLayout("fillx", "", "5[]5"));
@@ -32,6 +34,17 @@ public class Chat_Body extends javax.swing.JPanel {
         if (image != null && image.length > 0){
         item.setImage(image);
         }
+        item.setTime();
+        item.setUserProfile(user);
+        body.add(item, "wrap, w 100::80%");
+        //  ::80% set max with 80%
+        body.repaint();
+        body.revalidate();
+    }
+    public void addItemLeft(String text, String user, String[] image) {
+        Chat_Left_With_Profile item = new Chat_Left_With_Profile();
+        item.setText(text);
+        item.setImage(image);
         item.setTime();
         item.setUserProfile(user);
         body.add(item, "wrap, w 100::80%");
