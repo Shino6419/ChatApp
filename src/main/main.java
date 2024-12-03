@@ -21,7 +21,7 @@ public class main extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/icon/icon.png")).getImage());
         ComponentResizer com= new ComponentResizer();
         com.registerComponent(this);
-        com.setMinimumSize(new Dimension(800,600));
+        com.setMinimumSize(new Dimension(900,600));
         com.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
         com.setSnapSize(new Dimension(10,10));
         vIew_Image.setVisible(false);
@@ -56,6 +56,8 @@ public class main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
         setFocusableWindowState(false);
+        setMinimumSize(new java.awt.Dimension(700, 600));
+        setPreferredSize(new java.awt.Dimension(900, 600));
 
         border.setBackground(new java.awt.Color(229, 229, 229));
         border.setPreferredSize(new java.awt.Dimension(900, 500));
