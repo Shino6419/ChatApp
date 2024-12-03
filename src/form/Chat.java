@@ -1,10 +1,7 @@
 
 package form;
 
-/**
- *
- * @author Minh Khang
- */
+
 public class Chat extends javax.swing.JPanel {
 
  

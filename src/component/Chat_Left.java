@@ -4,15 +4,9 @@ package component;
 import java.awt.Color;
 import javax.swing.Icon;
 
-/**
- *
- * @author Minh Khang
- */
+
 public class Chat_Left extends javax.swing.JLayeredPane {
 
-    /**
-     * Creates new form Chat_Left
-     */
    public Chat_Left() {
         initComponents();
         txt.setBackground(new Color(229,229,229));

@@ -3,15 +3,10 @@ package form;
 
 import net.miginfocom.swing.MigLayout;
 
-/**
- *
- * @author Minh Khang
- */
+
 public class Home extends javax.swing.JLayeredPane {
 
-    /**
-     * Creates new form Home
-     */
+
     public Home() {
         initComponents();
         init();

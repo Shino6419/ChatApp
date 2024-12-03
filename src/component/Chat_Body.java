@@ -7,10 +7,6 @@ import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
 import swing.ScrollBar;
 
-/**
- *
- * @author Minh Khang
- */
 public class Chat_Body extends javax.swing.JPanel {
 
  

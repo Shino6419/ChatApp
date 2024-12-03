@@ -6,15 +6,10 @@ import java.awt.Color;
 import net.miginfocom.swing.MigLayout;
 import swing.ScrollBar;
 
-/**
- *
- * @author Minh Khang
- */
+
 public class Menu_Left extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Menu_Right
-     */
+
     public Menu_Left() {
         initComponents();
         init();

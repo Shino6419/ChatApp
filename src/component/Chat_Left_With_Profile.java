@@ -4,10 +4,6 @@ package component;
 import java.awt.Color;
 import javax.swing.Icon;
 
-/**
- *
- * @author Minh Khang
- */
 public class Chat_Left_With_Profile extends javax.swing.JLayeredPane {
     public Chat_Left_With_Profile() {
         initComponents();

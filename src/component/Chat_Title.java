@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package component;
 
 import java.awt.Color;
 
-/**
- *
- * @author Minh Khang
- */
+
 public class Chat_Title extends javax.swing.JPanel {
 
-    /**
-     * Creates new form NewJPanel_1
-     */
     public Chat_Title() {
         initComponents();
     }

@@ -1,23 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package main;
 
+import event.EventImageView;
+import event.PublicEvent;
+import form.View_Image;
 import java.awt.*;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import swing.ComponentResizer;
 
-/**
- *
- * @author Minh Khang
- */
 public class main extends javax.swing.JFrame {
 
-    /**
-     * Creates new form main
-     */
+
     public main() {
         initComponents();
         init();
@@ -30,8 +24,25 @@ public class main extends javax.swing.JFrame {
         com.setMinimumSize(new Dimension(800,600));
         com.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
         com.setSnapSize(new Dimension(10,10));
-}
-   
+        vIew_Image.setVisible(false);
+        home.setVisible(true);
+        initEvent();
+    }
+
+    private void initEvent() {
+        PublicEvent.getInstance().addEventImageView(new EventImageView() {
+            @Override
+            public void viewImage(Icon image) {
+                vIew_Image.viewImage(image);
+            }
+
+            @Override
+            public void saveImage(Icon image) {
+                System.out.println("Save Image next update");
+            }
+
+        });
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -39,7 +50,8 @@ public class main extends javax.swing.JFrame {
         border = new javax.swing.JPanel();
         background = new javax.swing.JPanel();
         body = new javax.swing.JLayeredPane();
-        home1 = new form.Home();
+        vIew_Image = new form.View_Image();
+        home = new form.Home();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -50,8 +62,10 @@ public class main extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
-        body.setLayout(new java.awt.BorderLayout());
-        body.add(home1, java.awt.BorderLayout.CENTER);
+        body.setLayout(new java.awt.CardLayout());
+        body.setLayer(vIew_Image, javax.swing.JLayeredPane.POPUP_LAYER);
+        body.add(vIew_Image, "card3");
+        body.add(home, "card2");
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
@@ -59,14 +73,14 @@ public class main extends javax.swing.JFrame {
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
+                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
                 .addContainerGap())
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -74,17 +88,11 @@ public class main extends javax.swing.JFrame {
         border.setLayout(borderLayout);
         borderLayout.setHorizontalGroup(
             borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(borderLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         borderLayout.setVerticalGroup(
             borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, borderLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -105,9 +113,7 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private int pX;
     private int pY;
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -120,6 +126,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel background;
     private javax.swing.JLayeredPane body;
     private javax.swing.JPanel border;
-    private form.Home home1;
+    private form.Home home;
+    private form.View_Image vIew_Image;
     // End of variables declaration//GEN-END:variables
 }

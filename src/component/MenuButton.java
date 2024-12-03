@@ -6,36 +6,24 @@ import java.awt.Graphics;
 import javax.swing.Icon;
 import javax.swing.JButton;
 
-/**
- *
- * @author Minh Khang
- */
+
 public class MenuButton extends JButton{
 
-    /**
-     * @return the iconSimple
-     */
     public Icon getIconSimple() {
         return iconSimple;
     }
 
-    /**
-     * @param iconSimple the iconSimple to set
-     */
+
     public void setIconSimple(Icon iconSimple) {
         this.iconSimple = iconSimple;
     }
 
-    /**
-     * @return the iconSelected
-     */
+
     public Icon getIconSelected() {
         return iconSelected;
     }
 
-    /**
-     * @param iconSelected the iconSelected to set
-     */
+
     public void setIconSelected(Icon iconSelected) {
         this.iconSelected = iconSelected;
     }

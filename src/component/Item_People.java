@@ -5,15 +5,8 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-/**
- *
- * @author Minh Khang
- */
 public class Item_People extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Item_People
-     */
     public Item_People(String name) {
         initComponents();
         lb.setText(name);
