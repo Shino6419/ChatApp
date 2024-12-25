@@ -72,7 +72,6 @@ public class Chat_Item extends javax.swing.JLayeredPane {
         label = new JLabel(time);
         label.setForeground(new Color(110, 110, 110));
         label.setHorizontalTextPosition(JLabel.LEFT);
-        
         layer.add(label);
         add(layer);
     }

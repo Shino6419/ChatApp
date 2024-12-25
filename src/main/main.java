@@ -3,8 +3,9 @@ package main;
 
 import event.EventImageView;
 import event.PublicEvent;
-import form.View_Image;
 import java.awt.*;
+import com.formdev.flatlaf.intellijthemes.FlatArcIJTheme;
+import event.EventMain;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import swing.ComponentResizer;
@@ -21,15 +22,28 @@ public class main extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/icon/icon.png")).getImage());
         ComponentResizer com= new ComponentResizer();
         com.registerComponent(this);
-        com.setMinimumSize(new Dimension(900,600));
+        com.setMinimumSize(new Dimension(600,900));
         com.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
         com.setSnapSize(new Dimension(10,10));
+        login.setVisible(true);
+        loading.setVisible(false);
         vIew_Image.setVisible(false);
-        home.setVisible(true);
+        home.setVisible(false);
         initEvent();
     }
 
     private void initEvent() {
+        PublicEvent.getInstance().addEventMain(new EventMain() {
+            @Override
+            public void showLoading(boolean show) {
+                loading.setVisible(show);
+            }
+
+            @Override
+            public void initChat() {
+                home.setVisible(true);
+            }
+        });
         PublicEvent.getInstance().addEventImageView(new EventImageView() {
             @Override
             public void viewImage(Icon image) {
@@ -50,12 +64,13 @@ public class main extends javax.swing.JFrame {
         border = new javax.swing.JPanel();
         background = new javax.swing.JPanel();
         body = new javax.swing.JLayeredPane();
+        loading = new component.Loading();
+        login = new form.Login();
         vIew_Image = new form.View_Image();
         home = new form.Home();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setFocusable(false);
-        setFocusableWindowState(false);
+        setFocusCycleRoot(false);
         setMinimumSize(new java.awt.Dimension(700, 600));
         setPreferredSize(new java.awt.Dimension(900, 600));
 
@@ -65,6 +80,10 @@ public class main extends javax.swing.JFrame {
         background.setBackground(new java.awt.Color(255, 255, 255));
 
         body.setLayout(new java.awt.CardLayout());
+
+        loading.setOpaque(false);
+        body.add(loading, "card5");
+        body.add(login, "card4");
         body.setLayer(vIew_Image, javax.swing.JLayeredPane.POPUP_LAYER);
         body.add(vIew_Image, "card3");
         body.add(home, "card2");
@@ -75,7 +94,7 @@ public class main extends javax.swing.JFrame {
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 798, Short.MAX_VALUE)
                 .addContainerGap())
         );
         backgroundLayout.setVerticalGroup(
@@ -101,7 +120,7 @@ public class main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +136,9 @@ public class main extends javax.swing.JFrame {
     private int pY;
 
     public static void main(String args[]) {
+        FlatArcIJTheme.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new main().setVisible(true);
             }
@@ -129,6 +150,8 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLayeredPane body;
     private javax.swing.JPanel border;
     private form.Home home;
+    private component.Loading loading;
+    private form.Login login;
     private form.View_Image vIew_Image;
     // End of variables declaration//GEN-END:variables
 }
